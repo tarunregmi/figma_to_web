@@ -31,7 +31,7 @@ html, body{
 
 /* padding-x */
 header, footer, .hero, .showcase, .connect{
-    padding: 0 var(--pad-x);
+    padding: 90px var(--pad-x);
 }
 
 /* header */
@@ -75,7 +75,7 @@ header{
     transform: rotateZ(90deg);
 }
 
-#get_start{
+.btn-primary{
     border: none;
     outline: none;
     color: #fff;
@@ -148,12 +148,72 @@ img{
     object-position: center;
 }
 
-
+/* connect */
 .connect{
-    padding: 90px var(--pad-x);
+    display: flex;
+    gap: 30px;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.connect form{
+    gap: 15px;
+}
+
+form input{
+    border: none;
+    outline: none;
+    padding: 20px;
+    /* width: 100%; */
+    border-radius: 5px;
+    font: inherit;
 }
 
 
 footer{
     background-color: #fff;
+}
+
+footer section{
+    display: flex;
+    gap: 60px;
+    flex-flow: row nowrap;
+}
+
+footer .col1{
+    max-width: 300px;
+}
+
+footer .col2{
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+footer p{
+    margin: 30px 0;
+}
+
+footer h3{
+    padding-bottom: 15px;
+}
+
+footer li{
+    color: var(--color-2);
+    padding-bottom: 10px;
+}
+
+
+
+
+/*  */
+ul{
+    list-style: none;
+}
+
+/* utils */
+.row{
+    display: flex;
+    flex-flow: row nowrap;
 }
