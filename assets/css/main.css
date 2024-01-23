@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap');
+
+*, *::before, *::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    color: #333;
+    color-scheme: light;
+    background-color: #F5F6FA;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.2;
+
+    --color-2: #858A8F;
+
+    --font-paragraph: 16px;
+
+    /* height */
+    --header-height: 90px;
+
+    /* padding */
+    --pad-x: 100px;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+/* padding-x */
+header, footer, .hero, .showcase, .connect{
+    padding: 0 var(--pad-x);
+}
+
+/* header */
+header{
+    padding: 0 var(--pad-x);
+    height: var(--header-height);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: var(--font-paragraph);
+    font-weight: 600;
+    /* background: #0000001e; */
+}
+
+.logo{
+    height: 50px;
+}
+
+#menu{
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 30px;
+    color: var(--color-2);
+}
+
+#menu li{
+    display: flex;
+    gap: 5px;
+    flex-flow: row nowrap;
+    align-items: center;
+    cursor: pointer;
+}
+
+#menu > li::after{
+    content: "\203A";
+    font-size: 1.5em;
+    transform: rotateZ(90deg);
+}
+
+#get_start{
+    border: none;
+    outline: none;
+    color: #fff;
+    background-color: #0176FF;
+    padding: 13px 25px;
+    border-radius: 5px;
+    font: inherit;
+    text-wrap: nowrap;
+}
+
+/* main */
+main p{
+    font-size: var(--font-paragraph);
+}
+
+.hero{
+    height: calc(100vh - var(--header-height) - 160px);
+    display: flex;
+    gap: 25px;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero h1, .hero p{
+    text-align: center;
+}
+
+h1{
+    font-size: 45px;
+    font-weight: 700;
+}
+
+.showcase{
+    padding: 70px var(--pad-x);
+    background-color: #FFF;
+
+    display: flex;
+    gap: 30px;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+p{
+    color: var(--color-2);
+}
+
+
+/* card */
+.card{
+    display: flex;
+    flex-flow: column nowrap;
+
+    width: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #F5F6FA;
+}
+
+.card-content{
+    padding: 15px;
+    display: flex;
+    gap: 15px;
+    flex-flow: column nowrap;
+}
+
+img{
+    max-inline-size: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+
+.connect{
+    padding: 90px var(--pad-x);
+}
+
+
+footer{
+    background-color: #fff;
+}
