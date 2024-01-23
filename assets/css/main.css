@@ -7,169 +7,193 @@
 }
 
 :root{
-    color: #333;
-    color-scheme: light;
+    color: #858A8F;
     background-color: #F5F6FA;
     font-family: 'Inter', sans-serif;
     line-height: 1.2;
 
-    --color-2: #858A8F;
-
+    --color-1: #333;
     --font-paragraph: 16px;
-
-    /* height */
-    --header-height: 90px;
-
-    /* padding */
     --pad-x: 100px;
+    --pad-y: 90px;
 }
 
-html, body{
+
+
+
+/* utilities */
+.slide{
     width: 100%;
-    height: 100%;
+    padding: var(--pad-y) var(--pad-x);
 }
 
-/* padding-x */
-header, footer, .hero, .showcase, .connect{
-    padding: 90px var(--pad-x);
-}
-
-/* header */
-header{
-    padding: 0 var(--pad-x);
-    height: var(--header-height);
+.row{
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    justify-content: space-between;
+}
 
-    font-size: var(--font-paragraph);
-    font-weight: 600;
-    /* background: #0000001e; */
+.column{
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
 }
 
 .logo{
     height: 50px;
 }
 
-#menu{
-    list-style: none;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    gap: 30px;
-    color: var(--color-2);
+.button{
+    background-color: #0176FF;
+    color: #FFF;
+    text-wrap: nowrap;
+    padding: 12px 22px;
+    border-radius: 3px;
 }
 
-#menu li{
-    display: flex;
+.typo-s{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+/* utilities */
+
+
+
+
+
+
+
+/* default */
+ul{
+    list-style: none;
+}
+
+img{
+    max-inline-size: 100%;
+}
+
+h1, h2, h3{
+    color: var(--color-1);
+}
+
+input, button{
+    border: none;
+    outline: none;
+    font: inherit;
+}
+/* /default */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* header */
+header.slide{
+    padding: 25px var(--pad-x);
+    justify-content: space-between;
+}
+
+.menu{
+    gap: 30px;
+}
+
+.menu li{
     gap: 5px;
-    flex-flow: row nowrap;
-    align-items: center;
     cursor: pointer;
 }
 
-#menu > li::after{
+.menu > li::after{
     content: "\203A";
     font-size: 1.5em;
     transform: rotateZ(90deg);
 }
+/* /header */
 
-.btn-primary{
-    border: none;
-    outline: none;
-    color: #fff;
-    background-color: #0176FF;
-    padding: 13px 25px;
-    border-radius: 5px;
-    font: inherit;
-    text-wrap: nowrap;
-}
 
-/* main */
-main p{
-    font-size: var(--font-paragraph);
-}
 
+
+/* hero */
 .hero{
-    height: calc(100vh - var(--header-height) - 160px);
-    display: flex;
     gap: 25px;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero h1, .hero p{
     text-align: center;
+    max-width: 800px;
+    padding: 115px var(--pad-x);
 }
 
 h1{
     font-size: 45px;
     font-weight: 700;
 }
+/* /hero */
 
+
+
+
+/* showcase */
 .showcase{
-    padding: 70px var(--pad-x);
     background-color: #FFF;
-
     display: flex;
     gap: 30px;
     flex-flow: row wrap;
     justify-content: center;
 }
 
-p{
-    color: var(--color-2);
-}
-
-
-/* card */
 .card{
+    width: 350px;
     display: flex;
     flex-flow: column nowrap;
-
-    width: 300px;
     border-radius: 10px;
     overflow: hidden;
     border: 2px solid #F5F6FA;
+    transition: border-color .3s ease;
 }
 
 .card-content{
     padding: 15px;
     display: flex;
-    gap: 15px;
+    gap: 20px;
     flex-flow: column nowrap;
 }
 
-img{
-    max-inline-size: 100%;
-    object-fit: contain;
-    object-position: center;
+.card:hover{
+    border-color: #ececec;
 }
+/* /showcase */
+
+
+
 
 /* connect */
 .connect{
-    display: flex;
     gap: 30px;
-    flex-flow: column nowrap;
-    align-items: center;
+    text-align: center;
 }
 
 .connect form{
     gap: 15px;
+    align-items: initial;
 }
 
 form input{
-    border: none;
-    outline: none;
-    padding: 20px;
-    /* width: 100%; */
     border-radius: 5px;
-    font: inherit;
+    padding: 12px 22px;
 }
+/* /connect */
 
 
+
+
+/* footer */
 footer{
     background-color: #fff;
 }
@@ -203,17 +227,25 @@ footer li{
     color: var(--color-2);
     padding-bottom: 10px;
 }
+/* /footer */
 
 
+/* responsiveness */
 
+@media (max-width: 412px) {
+    :root{
+        --pad-x: 20px;
+    }
 
-/*  */
-ul{
-    list-style: none;
-}
+    header .menu{
+        display: none;
+    }
 
-/* utils */
-.row{
-    display: flex;
-    flex-flow: row nowrap;
-}
+    .connect form{
+        flex-flow: column;
+    }
+
+    footer section{
+        flex-flow: column nowrap;
+    }
+} 
