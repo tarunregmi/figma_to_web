@@ -14,7 +14,7 @@
 
     --color-1: #333;
     --font-paragraph: 16px;
-    --pad-x: 100px;
+    --pad-x: 7.3vw;
     --pad-y: 90px;
 }
 
@@ -234,7 +234,15 @@ footer li{
 
 @media (max-width: 412px) {
     :root{
-        --pad-x: 20px;
+        --pad-x: 3vw;
+    }
+
+    header.slide{
+        padding: 12px var(--pad-x);
+    }
+
+    .button{
+        padding: 7px 14px;
     }
 
     header .menu{
@@ -248,4 +256,12 @@ footer li{
     footer section{
         flex-flow: column nowrap;
     }
-} 
+
+    .logo{
+        height: 40px;
+    }
+
+    .menu{
+        display: none;
+    }
+}
