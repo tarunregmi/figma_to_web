@@ -232,36 +232,25 @@ footer li{
 
 /* responsiveness */
 
-@media (max-width: 412px) {
-    :root{
-        --pad-x: 3vw;
-    }
-
-    header.slide{
-        padding: 12px var(--pad-x);
-    }
-
-    .button{
-        padding: 7px 14px;
-    }
-
-    header .menu{
+@media (max-width: 425px) {
+    /* header */
+    .menu{
         display: none;
     }
 
+    /* main */
     .connect form{
         flex-flow: column;
     }
 
+    /* footer */
     footer section{
         flex-flow: column nowrap;
     }
 
-    .logo{
-        height: 40px;
-    }
-
-    .menu{
-        display: none;
+    footer .col2{
+        gap: 15px 22px;
+        flex-flow: row wrap;
+        text-wrap: nowrap;
     }
 }
